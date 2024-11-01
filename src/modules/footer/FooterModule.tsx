@@ -11,7 +11,7 @@ type Props = {
 
 const Footer: FC<Props> = ({ footerPageData }) => {
   return (
-    <footer className="Footer bg-light-surface-1 px-margin-mobile pt-margin-web dark:bg-dark-surface-1 sm:px-margin-web sm:pb-margin-web">
+    <footer className="px-margin-mobile pt-margin-web sm:px-margin-web sm:pb-margin-web">
       <h2 className="sr-only">Footer</h2>
       <div className="default-grid sm:mb-20">
         <div className="mb-12 hidden items-start sm:col-span-8 sm:flex md:col-span-4 md:mb-0">
@@ -29,11 +29,11 @@ const Footer: FC<Props> = ({ footerPageData }) => {
                 <h3 className="body-1 text-light-neutral-1 dark:text-dark-neutral-1">Support</h3>
                 <ul>
                   {footerPageData?.footerLinksSupport.map((link) => (
-                    <li key={link.label}>
+                    <li key={link.name}>
                       <TextButton
                         textClassName="body-2 text-light-neutral-2 dark:text-dark-neutral-2 group-hover:text-light-neutral-1 group-hover:dark:text-dark-neutral-1 transition-colors"
                         href={link.url}
-                        label={link.label}
+                        label={link.name}
                       />
                     </li>
                   ))}
@@ -46,11 +46,11 @@ const Footer: FC<Props> = ({ footerPageData }) => {
                 <h3 className="body-1 text-light-neutral-1 dark:text-dark-neutral-1">Ecosystem</h3>
                 <ul>
                   {footerPageData.footerLinksEcosystem.map((link) => (
-                    <li key={link.label}>
+                    <li key={link.name}>
                       <TextButton
                         textClassName="body-2 text-light-neutral-2 dark:text-dark-neutral-2 group-hover:text-light-neutral-1 group-hover:dark:text-dark-neutral-1 transition-colors"
                         href={link.url}
-                        label={link.label}
+                        label={link.name}
                       />
                     </li>
                   ))}
@@ -62,11 +62,11 @@ const Footer: FC<Props> = ({ footerPageData }) => {
                 <h3 className="body-1 text-light-neutral-1 dark:text-dark-neutral-1">Company</h3>
                 <ul>
                   {footerPageData.footerLinksCompany.map((link) => (
-                    <li key={link.label}>
+                    <li key={link.name}>
                       <TextButton
                         textClassName="body-2 text-light-neutral-2 dark:text-dark-neutral-2 group-hover:text-light-neutral-1 group-hover:dark:text-dark-neutral-1 transition-colors"
                         href={link.url}
-                        label={link.label}
+                        label={link.name}
                       />
                     </li>
                   ))}
@@ -78,11 +78,11 @@ const Footer: FC<Props> = ({ footerPageData }) => {
                 <h3 className="body-1 text-light-neutral-1 dark:text-dark-neutral-1">Need Help?</h3>
                 <ul>
                   {footerPageData?.footerLinksHelp.map((link) => (
-                    <li key={link.label}>
+                    <li key={link.name}>
                       <TextButton
                         textClassName="body-2 text-light-neutral-2 dark:text-dark-neutral-2 group-hover:text-light-neutral-1 group-hover:dark:text-dark-neutral-1 transition-colors"
                         href={link.url}
-                        label={link.label}
+                        label={link.name}
                       />
                     </li>
                   ))}

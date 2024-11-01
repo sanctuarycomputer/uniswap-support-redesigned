@@ -13,5 +13,192 @@
 }
 
 .page-wrapper {
-  @apply p-margin-mobile pb-margin-web sm:px-margin-web sm:pb-[7.5rem] mt-nav-h;
+  @apply w-full p-margin-mobile pb-margin-web sm:px-margin-web sm:pb-[7.5rem] mt-nav-h;
+}
+
+.divider {
+  @apply border-t-[1px] border-light-surface-3 dark:border-dark-surface-3 my-1.5 w-full;
+}
+
+.ArticlePage {
+  .article-body {
+    @apply text-light-neutral-1 dark:text-dark-neutral-1;
+
+    h2 {
+      @apply heading-2 mt-margin-mobile first:mt-0;
+    }
+
+    h3 {
+      @apply heading-3 mt-margin-mobile first:mt-0;
+    }
+
+    h4 {
+      @apply heading-4 mt-margin-mobile first:mt-0;
+    }
+
+    h5 {
+      @apply subheading-1 mt-margin-mobile first:mt-0;
+    }
+
+    h6 {
+      @apply subheading-2 mt-margin-mobile first:mt-0;
+    }
+
+    p {
+      @apply body-1;
+    }
+
+    a {
+      @apply break-all underline decoration-2 underline-offset-4 !transition-all hover:decoration-light-neutral-2 dark:hover:decoration-dark-neutral-2;
+      font: inherit;
+    }
+
+    img {
+      @apply rounded-small my-5 first:mt-0;
+    }
+
+    ol {
+      @apply list-decimal list-inside my-5 first:mt-0;
+    }
+
+    ul {
+      @apply list-disc list-inside my-5 first:mt-0;
+    }
+
+    li {
+      @apply body-1;
+
+      > ol,
+      ul {
+        @apply mt-2 ml-4;
+      }
+    }
+
+    table,
+    th,
+    td {
+      @apply table-fixed border border-light-neutral-3 border-collapse dark:border-dark-neutral-3 w-full my-5 first:mt-0;
+    }
+
+    th,
+    td {
+      @apply p-margin-mobile-dense body-2;
+
+      p,
+      span {
+        @apply body-2;
+      }
+    }
+  }
+
+  .article-info-bottom {
+    .article-votes,
+    .article-votes-controls {
+      @apply flex flex-row items-center;
+
+      button {
+        @apply transition hover:text-light-neutral-2 hover:dark:text-dark-neutral-2;
+      }
+    }
+
+    .article-votes-question,
+    .article-vote,
+    .article-vote-divider {
+      @apply caption-1 text-light-neutral-1 dark:text-dark-neutral-1;
+    }
+
+    .article-vote-divider {
+      @apply mx-padding-x-small;
+    }
+
+    .article-votes-question {
+      @apply mr-margin-extension;
+    }
+
+    .article-updated-text {
+      @apply caption-1 text-light-neutral-2 dark:text-dark-neutral-2;
+    }
+  }
+
+  .related-articles {
+    @apply pt-margin-mobile sm:pt-padding-x-large;
+    .related-articles-title {
+      @apply heading-3 text-light-neutral-1 dark:text-dark-neutral-1;
+    }
+
+    ul {
+      @apply mt-padding-medium sm:mt-margin-mobile gap-y-4  grid grid-cols-4 gap-gap-large sm:grid-cols-6;
+
+      li {
+        @apply relative flex col-span-4 sm:col-span-3;
+
+        &:before {
+          @apply top-padding-medium left-padding-medium dark:hidden;
+          display: block;
+          position: absolute;
+          content: '';
+          background-image: url('../assets/book-open-light.svg');
+          background-size: 1.5rem 1.5rem;
+          height: 1.5rem;
+          width: 1.5rem;
+          z-index: 10;
+        }
+
+        &:after {
+          @apply top-padding-medium left-padding-medium hidden dark:block;
+          position: absolute;
+          content: '';
+          background-image: url('../assets/book-open-dark.svg');
+          background-size: 1.5rem 1.5rem;
+          height: 1.5rem;
+          width: 1.5rem;
+          z-index: 10;
+        }
+
+        a {
+          @apply relative body-2 text-light-accent-1 dark:text-dark-accent-1 bg-light-accent-2 dark:bg-dark-accent-2 p-padding-medium pt-20 rounded-x-small w-full flex;
+
+          &:before {
+            @apply top-padding-medium right-padding-medium dark:hidden transition opacity-0;
+            display: block;
+            position: absolute;
+            content: '';
+            background-image: url('../assets/right-arrow-light.svg');
+            background-size: 1.5rem 1.5rem;
+            height: 1.5rem;
+            width: 1.5rem;
+          }
+
+          &:hover:before {
+            @apply opacity-100;
+          }
+
+          &:after {
+            @apply top-padding-medium right-padding-medium hidden dark:block transition opacity-0;
+            position: absolute;
+            content: '';
+            background-image: url('../assets/right-arrow-dark.svg');
+            background-size: 1.5rem 1.5rem;
+            height: 1.5rem;
+            width: 1.5rem;
+          }
+
+          &:hover:after {
+            @apply opacity-100;
+          }
+        }
+      }
+    }
+  }
+
+  .article-content-nav {
+    a {
+      @apply body-3 text-light-neutral-2 dark:text-dark-neutral-2 transition hover:text-light-neutral-1 dark:hover:text-dark-neutral-1;
+    }
+  }
+}
+
+html:has(.ArticlePage) {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px !important;
 }

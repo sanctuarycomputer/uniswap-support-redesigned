@@ -1,4 +1,6 @@
-<div class="homepage" id="new-homepage">
+<div class="Homepage flex flex-row bg-light-surface-1 dark:bg-dark-surface-1">
+  <div class="min-w-[15rem] max-w-[15rem] hidden md:block border-2 mt-nav-h">sidenav placeholder</div>
+  <div id="new-homepage"></div>
 </div>
 
 <script type="module">
@@ -10,10 +12,13 @@
 
   // Handles data for the homepage. If you would like to update any data within homepage, adjust it here.
   const homepageData = {
-    hero: {
+    heros: [{
       headerLine1: 'Need help?',
       headerLine2: 'We got you.',
-    },
+    }, {
+      headerLine1: 'No problem too big.',
+      headerLine2: 'We’re here to help.',
+    }],
     coloredCardsBlock: {
       cards: [
         {
@@ -21,24 +26,28 @@
           title: 'Read FAQs',
           description: 'Get more information on basic terms and how the Uniswap app works',
           color: 'pink',
+          url: '/hc/en-us/requests/new',
         },
         {
           icon: 'lightbulb', 
           title: 'How to use Uniswap',
           description: 'Get more information on basic terms and how the Uniswap web app works',
           color: 'green',
+          url: '/hc/en-us/requests/new',
         },
         {
           icon: 'helpCircle', 
           title: 'Troubleshoot an issue',
           description: 'Explore our guides for help troubleshooting issues',
           color: 'blue',
+          url: '/hc/en-us/requests/new',
         },
         {
           icon: 'messageQuestion', 
           title: 'Submit a Request',
           description: 'If you’re having trouble you can contact our helpful team',
           color: 'orange',
+          url: '/hc/en-us/requests/new',
         }
       ],
     },
@@ -87,12 +96,12 @@
       supportTitle: 'Get Support',
       supportButton: {
         url: 'https://help.uniswap.org/',
-        label: 'Help center',
+        name: 'Help center',
       },
       socialTitle: 'Insights and news from the team',
       socialButton: {
         url: 'https://blog.uniswap.org/',
-        label: 'Help center',
+        name: 'Help center',
       },
       newsletterTitle: 'Sign up for research and updates from the Uniswap Labs team',
     },

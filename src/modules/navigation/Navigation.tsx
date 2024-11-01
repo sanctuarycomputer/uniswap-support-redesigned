@@ -34,14 +34,11 @@ const Navigation: FC = () => {
   return (
     <UIProvider>
       <nav
-        className={cn(
-          'Navigation fixed top-0 left-0 right-0 z-nav flex w-screen justify-center bg-light-surface-1 dark:border-dark-surface-3 dark:bg-dark-surface-1',
-          {
-            'border-b': !scrollIsOnTop,
-          }
-        )}
+        className={cn('flex justify-center', {
+          'border-b': !scrollIsOnTop,
+        })}
       >
-        <div className="flex w-full flex-row items-center justify-between border-light-surface-3 px-4 py-[1.15625rem] sm:px-[0.9375rem] sm:py-3 md:h-[4.5rem]">
+        <div className="flex w-full flex-row items-center justify-between border-light-surface-3 px-4 py-[1.15625rem] md:px-[0.9375rem] md:py-3 md:h-[4.5rem]">
           <div className="flex flex-row items-center">
             <LinkBase href="/" className="flex flex-row items-center">
               <MiniUnicon className="mb-[0.1875rem] h-8 w-8" />
@@ -50,7 +47,7 @@ const Navigation: FC = () => {
               </p>
             </LinkBase>
           </div>
-          <div className="sm:hidden">
+          <div className="md:hidden">
             <ButtonBase
               onClick={() => {
                 setMenuIsOpen((prev) => !prev);
@@ -59,7 +56,7 @@ const Navigation: FC = () => {
               <Menu className="h-padding-large w-padding-large" />
             </ButtonBase>
           </div>
-          <div className="hidden sm:flex">
+          <div className="hidden md:flex">
             <ThemeSwitch />
             <PrimaryButton
               className="ml-padding-small-dense !my-auto !py-0 !h-8"

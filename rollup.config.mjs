@@ -38,6 +38,7 @@ export default defineConfig([
       navigation: 'src/modules/navigation/index.ts',
       footer: 'src/modules/footer/index.ts',
       homepage: 'src/modules/homepage/index.ts',
+      'article-page': 'src/modules/article-page/index.ts',
     },
     output: {
       dir: 'assets',

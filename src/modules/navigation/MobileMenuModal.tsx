@@ -33,7 +33,7 @@ const MobileMenuModal: FC<Props> = ({ isOpen, close }) => {
     <Dialog
       open={isOpen}
       onClose={handleClose}
-      className="MobileMenuModal relative z-modal sm:hidden"
+      className="MobileMenuModal relative z-modal md:hidden"
     >
       <div
         className={cn(

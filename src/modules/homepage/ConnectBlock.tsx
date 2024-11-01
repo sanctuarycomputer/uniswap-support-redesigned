@@ -27,7 +27,7 @@ const ConnectBlock: FC<Props> = ({ connectBlock }) => {
           </h3>
           <IconButton
             href={connectBlock.supportButton.url}
-            label={connectBlock.supportButton.label}
+            label={connectBlock.supportButton.name}
             color="orange-vibrant"
           />
         </div>
@@ -37,7 +37,7 @@ const ConnectBlock: FC<Props> = ({ connectBlock }) => {
           </h3>
           <IconButton
             href={connectBlock.socialButton.url}
-            label={connectBlock.socialButton.label}
+            label={connectBlock.socialButton.name}
             color="brown-vibrant"
           />
         </div>

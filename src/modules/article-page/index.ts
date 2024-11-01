@@ -1,0 +1,1 @@
+export { renderArticleBreadcrumbs } from './renderArticlePage';
