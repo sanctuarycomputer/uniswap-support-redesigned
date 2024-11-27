@@ -67,10 +67,13 @@
 // Add anchor links to article content
   const articleContentNav = document.getElementById("article-content-nav");
   const articleBody = document.getElementById("article-body-element");
+  const sideNavItemElements = articleBody.querySelectorAll('h1.side-nav-item, h2.side-nav-item, h3.side-nav-item, h4.side-nav-item, p.side-nav-item');
+
   const hElements = articleBody.querySelectorAll('h1, h2, h3, h4');
+
   let articleContentNavHasItems = false;
 
-  hElements.forEach((element) => {
+  ((sideNavItemElements && sideNavItemElements.length > 0) ? sideNavItemElements : hElements).forEach((element) => {
     const title = element.textContent;
     const withoutSpaceTitle = title.replaceAll(/\s/g,'');
 
