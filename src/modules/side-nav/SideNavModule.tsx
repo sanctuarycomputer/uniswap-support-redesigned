@@ -9,15 +9,27 @@ type Props = {
 
 export const SideNav: FC<Props> = ({ sideNavData, navState }) => {
   const [activeNavState, setActiveNavState] = useState<NavState>(navState);
+  const [sideNavLoadedFirstTime, setSideNavLoadedFirstTime] = useState(true);
+  // initialActiveSection is used to set the initial state of the section when the side nav is loaded for the first time. Even if the section is active, it should be closed.
+  const [initialActiveSection] = useState<{ [key: number]: boolean }>({
+    [navState.section || '']: false,
+  });
   const [activeSection, setActiveSection] = useState<{ [key: number]: boolean }>({
     [navState.section || '']: true,
   });
 
   const handleSectiontoggle = (sectionId: number) => {
-    setActiveSection((prev) => ({
-      ...prev,
-      [sectionId]: !prev[sectionId],
-    }));
+    sideNavLoadedFirstTime
+      ? navState.section !== sectionId &&
+        setActiveSection((prev) => ({
+          ...prev,
+          [sectionId]: !prev[sectionId],
+        }))
+      : setActiveSection((prev) => ({
+          ...prev,
+          [sectionId]: !prev[sectionId],
+        }));
+    setSideNavLoadedFirstTime(false);
   };
 
   if (!sideNavData) {
@@ -52,10 +64,10 @@ export const SideNav: FC<Props> = ({ sideNavData, navState }) => {
               <ul>
                 {category.sections.map((section) => {
                   return (
-                    <li key={section.id} className="mt-1">
+                    <li key={section.id} className="mt-2">
                       <a
                         href={section.url}
-                        className="transition text-light-neutral-2 dark:text-dark-neutral-2 body-3 hover:text-light-accent-1 dark:hover:text-dark-accent-1"
+                        className="transition text-light-neutral-2 dark:text-dark-neutral-2 body-3 hover:text-light-accent-1 dark:hover:text-dark-accent-1  block !leading-[1.4]"
                       >
                         {section.name}
                       </a>
@@ -139,11 +151,15 @@ export const SideNav: FC<Props> = ({ sideNavData, navState }) => {
                           >
                             {section.name}
                           </span>
-                          <ChevronDown />
+                          <div className="shrink-0">
+                            <ChevronDown />
+                          </div>
                         </button>
                         <ul
                           className={cn('accordion-body overflow-hidden', {
-                            'accordion-body-active': activeSection[section.id],
+                            'accordion-body-active':
+                              (sideNavLoadedFirstTime && initialActiveSection[section.id]) ||
+                              (!sideNavLoadedFirstTime && activeSection[section.id]),
                           })}
                         >
                           <div className="overflow-hidden">
@@ -155,7 +171,7 @@ export const SideNav: FC<Props> = ({ sideNavData, navState }) => {
                                   <a
                                     href={article.url}
                                     className={cn(
-                                      'transition body-3 hover:text-light-accent-1 dark:hover:text-dark-accent-1',
+                                      'transition body-3 block !leading-[1.4] hover:text-light-accent-1 dark:hover:text-dark-accent-1',
                                       {
                                         'text-light-accent-1 dark:text-dark-accent-1':
                                           isActiveArticle,

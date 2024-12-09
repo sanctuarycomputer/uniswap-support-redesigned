@@ -259,7 +259,8 @@ const Navigation = () => {
                 onClick: () => {
                   setMobileSearchBarIsOpen((prev) => !prev);
                 },
-                className: 'body-2 text-light-neutral-2 dark:text-dark-neutral-2 shrink-0',
+                className:
+                  'body-2 text-light-neutral-2 dark:text-dark-neutral-2 shrink-0 absolute right-4',
                 children: 'Cancel',
               }),
             ],

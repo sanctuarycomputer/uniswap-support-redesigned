@@ -1,13 +1,15 @@
 <div class="Homepage flex flex-row bg-light-surface-1 dark:bg-dark-surface-1">
   <div id="new-side-nav" class="min-w-[15rem] max-w-[15rem] hidden md:block relative mt-nav-h"></div>
   <div id="new-homepage">
-    <div id="search-bar-placeholder-mobile" class="z-search w-full pointer-events-none md:hidden opacity-0">
-      <div class="m-auto flex flex-row space-x-2 p-3 rounded-[1.25rem] bg-light-surface-3 dark:!bg-dark-surface-3 items-center !pointer-events-auto border border-transparent focus-within:!border-light-surface-3 focus-within:dark:!border-dark-surface-3 focus-within:!bg-transparent focus-within:!text-light-neutral-1 focus-within:dark:!text-dark-neutral-1">
+    <div id="search-bar-placeholder-mobile" class="search-bar-placeholder-mobile z-search w-full pointer-events-none md:hidden opacity-0">
+      <div class="m-auto py-3 rounded-[1.25rem] bg-light-surface-3 dark:!bg-dark-surface-3 items-center !pointer-events-auto border border-transparent focus-within:!border-light-surface-3 focus-within:dark:!border-dark-surface-3 focus-within:!bg-transparent focus-within:!text-light-neutral-1 focus-within:dark:!text-dark-neutral-1">
         <h2 class="sr-only">{{ t 'search' }}</h2>
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" class="shrink-0">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" class="shrink-0 absolute left-4 mt-0.5">
           <path fill-rule="evenodd" clip-rule="evenodd" d="M9.16675 1.66699C5.02461 1.66699 1.66675 5.02486 1.66675 9.16699C1.66675 13.3091 5.02461 16.667 9.16675 16.667C10.9388 16.667 12.5673 16.0524 13.8508 15.0248L17.1126 18.2913C17.4378 18.617 17.9654 18.6174 18.2911 18.2922C18.6168 17.967 18.6172 17.4394 18.292 17.1137L15.0288 13.8458C16.0539 12.5631 16.6667 10.9366 16.6667 9.16699C16.6667 5.02486 13.3089 1.66699 9.16675 1.66699ZM9.16675 3.33366C5.94509 3.33366 3.33341 5.94533 3.33341 9.16699C3.33341 12.3887 5.94509 15.0003 9.16675 15.0003C12.3884 15.0003 15.0001 12.3887 15.0001 9.16699C15.0001 5.94533 12.3884 3.33366 9.16675 3.33366Z" fill="#6B6B6B"/>
         </svg>
-        {{search submit=false instant=settings.instant_search class='search search-full'}}
+        <div class="search-bar-placeholder-mobile w-full ml-[3.25rem]">
+          {{search submit=false instant=settings.instant_search class='search search-full'}}
+        </div>
       </div>
     </div>
   </div>
@@ -33,29 +35,29 @@
       cards: [
         {
           icon: 'graduationCap', 
-          title: 'Read FAQs',
-          description: 'Get more information on basic terms and how the Uniswap app works',
+          title: 'Frequently Asked Questions',
+          description: 'Answers to our top ten questions',
           color: 'pink',
-          url: '/hc/en-us/requests/new',
+          url: '/hc/en-us/sections/32172915881485',
         },
         {
           icon: 'lightbulb', 
-          title: 'How to use Uniswap',
-          description: 'Get more information on basic terms and how the Uniswap web app works',
+          title: 'Getting Started Guides',
+          description: 'Set up your wallet, make your first swap, and more',
           color: 'green',
-          url: '/hc/en-us/requests/new',
+          url: '/hc/en-us/categories/32174051347341',
         },
         {
           icon: 'helpCircle', 
-          title: 'Troubleshoot an issue',
-          description: 'Explore our guides for help troubleshooting issues',
+          title: 'Deep Dives and Troubleshooting',
+          description: 'More details on the Uniswap interface and troubleshooting issues',
           color: 'blue',
-          url: '/hc/en-us/requests/new',
+          url: '/hc/en-us/categories/32174144727565',
         },
         {
           icon: 'messageQuestion', 
-          title: 'Submit a Request',
-          description: 'If you’re having trouble you can contact our helpful team',
+          title: 'Get Help',
+          description: 'If you’re having trouble, our team is here to help!',
           color: 'orange',
           url: '/hc/en-us/requests/new',
         }

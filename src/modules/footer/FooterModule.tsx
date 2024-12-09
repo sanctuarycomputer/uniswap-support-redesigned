@@ -43,7 +43,7 @@ const Footer: FC<Props> = ({ footerPageData }) => {
             {footerPageData?.footerLinksEcosystem &&
             footerPageData.footerLinksEcosystem.length > 0 ? (
               <div className="col-span-1 space-y-[0.3125rem]">
-                <h3 className="body-1 text-light-neutral-1 dark:text-dark-neutral-1">Ecosystem</h3>
+                <h3 className="body-1 text-light-neutral-1 dark:text-dark-neutral-1">Protocol</h3>
                 <ul>
                   {footerPageData.footerLinksEcosystem.map((link) => (
                     <li key={link.name}>

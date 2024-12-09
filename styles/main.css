@@ -45,12 +45,16 @@
     }
 
     p {
-      @apply body-1;
+      @apply body-2;
     }
 
     a {
-      @apply break-all underline decoration-2 underline-offset-4 !transition-all hover:decoration-light-neutral-2 dark:hover:decoration-dark-neutral-2;
+      @apply break-words !underline !decoration-2 !underline-offset-4 !transition-all hover:!decoration-light-neutral-2 dark:hover:!decoration-dark-neutral-2;
       font: inherit;
+    }
+
+    a > span {
+      @apply !border-none;
     }
 
     img {
@@ -371,7 +375,7 @@ html:has(.ArticlePage) {
 }
 
 zd-autocomplete {
-  @apply !body-3 !bg-light-surface-1 dark:!bg-dark-surface-1 !text-light-neutral-1 dark:!text-dark-neutral-1 md:!w-[25rem] !w-screen !-ml-[3.25rem] md:!-ml-12 !rounded-b-xl !shadow-none !border !border-light-surface-3 dark:!border-dark-surface-3;
+  @apply !body-3 !bg-light-surface-1 dark:!bg-dark-surface-1 !text-light-neutral-1 dark:!text-dark-neutral-1 md:!w-[25rem] !-ml-[3.25rem] md:!-ml-12 !rounded-b-xl !shadow-none !border !border-light-surface-3 dark:!border-dark-surface-3;
 }
 
 zd-autocomplete-header {
@@ -407,4 +411,17 @@ input::-webkit-search-cancel-button {
 
 iframe#launcher {
   @apply !z-50;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.ArticleBreadcrumbs::-webkit-scrollbar,
+.SideNav > div::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.ArticleBreadcrumbs,
+.SideNav > div {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }

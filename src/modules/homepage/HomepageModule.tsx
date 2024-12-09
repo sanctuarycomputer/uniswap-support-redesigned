@@ -110,10 +110,14 @@ const Homepage: FC<Props> = ({ homepageData }) => {
                 className={cn(
                   'ColoredCard rounded-large p-padding-medium col-span-4 md:col-span-2',
                   {
-                    'bg-light-pink-fade dark:bg-dark-pink-fade': card.color === 'pink',
-                    'bg-light-green dark:bg-dark-green': card.color === 'green',
-                    'bg-light-blue dark:bg-dark-blue': card.color === 'blue',
-                    'bg-light-orange-fade dark:bg-dark-orange-fade': card.color === 'orange',
+                    'bg-light-pink-fade dark:bg-dark-pink-fade hover:bg-light-accent-2-hovered dark:hover:bg-dark-accent-2-hovered':
+                      card.color === 'pink',
+                    'bg-light-green dark:bg-dark-green hover:bg-light-green-base-hovered dark:hover:bg-dark-green-base-hovered':
+                      card.color === 'green',
+                    'bg-light-blue dark:bg-dark-blue hover:bg-light-blue-base-hovered dark:hover:bg-dark-blue-base-hovered':
+                      card.color === 'blue',
+                    'bg-light-orange-fade dark:bg-dark-orange-fade hover:bg-light-orange-base-hovered dark:hover:bg-dark-orange-base-hovered':
+                      card.color === 'orange',
                   }
                 )}
               >
@@ -182,7 +186,7 @@ const Homepage: FC<Props> = ({ homepageData }) => {
       ) : null}
       <Divider />
       {homepageData.topicsBlock && homepageData.topicsBlock.categories.length > 0 ? (
-        <div className="FAQBlock py-padding-x-large">
+        <div className="FAQBlock py-padding-x-large md:mb-16">
           <div className="flex flex-row items-center">
             <Layers className="w-6 h-6 mr-2" color="neutral-1" />
             <h3 className="heading-2 text-light-neutral-1 dark:text-dark-neutral-2">Topics</h3>
@@ -203,8 +207,6 @@ const Homepage: FC<Props> = ({ homepageData }) => {
           </div>
         </div>
       ) : null}
-      <Divider />
-      {homepageData.connectBlock ? <ConnectBlock connectBlock={homepageData.connectBlock} /> : null}
     </div>
   );
 };
