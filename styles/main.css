@@ -222,7 +222,7 @@
         display: block;
         position: absolute;
         content: '';
-        background-image: url('../assets/right-arrow-light.svg');
+        background-image: var(--right-arrow-path-dark);
         background-size: 1.5rem 1.5rem;
         height: 1.5rem;
         width: 1.5rem;
