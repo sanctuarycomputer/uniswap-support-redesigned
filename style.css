@@ -202,8 +202,8 @@ template {
 }
 
 .avatar-wrapper g:nth-of-type(2) {
-  animation-duration: 5s;
-  animation-delay: 2s;
+  animation-duration: 4s;
+  animation-delay: 1s;
 }
 
 .avatar-wrapper g:nth-of-type(3) {
@@ -212,7 +212,7 @@ template {
 }
 
 .avatar-wrapper g:nth-of-type(4) {
-  animation-duration: 6s;
+  animation-duration: 4s;
   animation-delay: 1s;
 }
 
@@ -222,17 +222,17 @@ template {
 }
 
 .avatar-wrapper g:nth-of-type(6) {
-  animation-duration: 6s;
+  animation-duration: 4s;
   animation-delay: 2s;
 }
 
 .avatar-wrapper g:nth-of-type(7) {
-  animation-duration: 6s;
+  animation-duration: 5s;
   animation-delay: 2s;
 }
 
 .avatar-wrapper g:nth-of-type(8) {
-  animation-duration: 5s;
+  animation-duration: 4s;
   animation-delay: 1s;
 }
 
@@ -242,6 +242,6 @@ template {
 }
 
 .avatar-wrapper g:nth-of-type(10) {
-  animation-duration: 5s;
+  animation-duration: 4s;
   animation-delay: 1s;
 }
