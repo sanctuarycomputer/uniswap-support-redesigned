@@ -138,29 +138,29 @@
 </style>
 <link rel="stylesheet" href={{asset 'tailwind-output.css'}} />
 <link rel="stylesheet" href={{asset 'types.css'}} />
-<script src="https://cdn.jsdelivr.net/npm/js-cookie@3/dist/js.cookie.min.js"></script>
-<script>
-  (function() {
-    // Initialize ThemeManager with cookie handling
-    class ThemeManager {
-      static getTheme() {
-        return Cookies.get('uniswap-ui-theme');
+{{!-- Script to get and set theme ASAP to prevent flashing between page loads --}}
+<script type="text/javascript">
+  function getCookie(cname) { // https://www.w3schools.com/js/js_cookies.asp
+    let name = cname + "=";
+    let ca = document.cookie.split(';');
+    for(let i = 0; i < ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
       }
-
-      static setTheme(theme) {
-        Cookies.set('uniswap-ui-theme', theme, { expires: 365, domain: 'zendesk.com' });
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
       }
     }
+    return "";
+  }
 
-    // Apply the theme based on the saved cookie value or system preference
-    const theme = ThemeManager.getTheme();
+// Apply theme based on the cookie value or system preference
+  let theme = getCookie('uniswap-ui-theme');
 
-    if (theme === 'dark' || (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  })();
+  if (theme === 'dark' || (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+    document.documentElement.classList.add('dark');
+  }
 </script>
 <script type="module">
   import { renderFlashNotifications } from "flash-notifications";

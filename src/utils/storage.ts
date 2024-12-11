@@ -8,18 +8,13 @@ export class StorageManager<T> {
   }
 
   set(value: T): void {
-    const valueToSet = JSON.stringify(value);
-    Cookies.set(this.key, valueToSet, { expires: 365, domain: 'uniswap.org' });
+    Cookies.set(this.key, value as string, { expires: 365, domain: 'uniswap.org' });
   }
 
   get(): T | undefined {
     const value = Cookies.get(this.key);
 
-    if (value) {
-      return JSON.parse(value);
-    }
-
-    return undefined;
+    return value ? (value as T) : undefined;
   }
 
   remove(): void {
@@ -27,7 +22,10 @@ export class StorageManager<T> {
   }
 }
 
-export type Theme = 'dark' | 'light';
+export enum Theme {
+  Dark = 'dark',
+  Light = 'light',
+}
 
 const THEME_STORAGE_NAME = 'uniswap-ui-theme';
 export const ThemeManager = new StorageManager<Theme>(THEME_STORAGE_NAME);

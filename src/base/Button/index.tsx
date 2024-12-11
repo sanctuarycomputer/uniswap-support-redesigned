@@ -47,10 +47,12 @@ export const PrimaryButton: FC<PrimaryLinkProps | PrimaryButtonProps> = (props) 
       !theme && color === 'accent-2',
     'bg-light-surface-3 dark:bg-dark-surface-3 hover:bg-light-surface-3-hovered dark:hover:bg-dark-surface-3-hovered':
       !theme && color === 'surface-3',
-    'bg-dark-accent-1 hover:bg-dark-accent-1-hovered': theme === 'dark' && color === 'accent-1',
-    'bg-light-accent-1 hover:bg-light-accent-1-hovered': theme === 'light' && color === 'accent-1',
-    'bg-dark-accent-2 hover:bg-dark-accent-2-hovered': theme === 'dark' && color === 'accent-2',
-    'bg-light-accent-2 hover:bg-light-accent-2-hovered': theme === 'light' && color === 'accent-2',
+    'bg-dark-accent-1 hover:bg-dark-accent-1-hovered': theme === Theme.Dark && color === 'accent-1',
+    'bg-light-accent-1 hover:bg-light-accent-1-hovered':
+      theme === Theme.Light && color === 'accent-1',
+    'bg-dark-accent-2 hover:bg-dark-accent-2-hovered': theme === Theme.Dark && color === 'accent-2',
+    'bg-light-accent-2 hover:bg-light-accent-2-hovered':
+      theme === Theme.Light && color === 'accent-2',
     'rounded-small px-padding-small py-padding-small-dense': size === 'medium',
     'rounded-medium px-padding-large p-padding-medium': size === 'large',
   });

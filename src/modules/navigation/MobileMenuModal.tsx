@@ -1,6 +1,7 @@
 import { FC, useState, useEffect } from 'react';
 
 import { useUIProvider } from '../../context/uiProvider';
+import { Theme } from '../../utils/storage';
 
 import { Dialog, DialogPanel } from '@headlessui/react';
 import { PrimaryButton } from '../../base/Button';
@@ -54,8 +55,8 @@ const MobileMenuModal: FC<Props> = ({ isOpen, close }) => {
         >
           <DialogPanel
             className={cn('w-full rounded-t-large border-t px-margin-mobile', {
-              'border-dark-surface-3 bg-dark-surface-1': theme === 'dark',
-              'border-light-surface-3 bg-light-surface-1': theme === 'light',
+              'border-dark-surface-3 bg-dark-surface-1': theme === Theme.Dark,
+              'border-light-surface-3 bg-light-surface-1': theme === Theme.Light,
             })}
           >
             <div className="pt-margin-mobile">
@@ -70,8 +71,8 @@ const MobileMenuModal: FC<Props> = ({ isOpen, close }) => {
               <div className="flex flex-row items-center justify-between">
                 <h3
                   className={cn('body-1', {
-                    'text-light-neutral-1': theme === 'light',
-                    'text-dark-neutral-1': theme === 'dark',
+                    'text-light-neutral-1': theme === Theme.Light,
+                    'text-dark-neutral-1': theme === Theme.Dark,
                   })}
                 >
                   Theme

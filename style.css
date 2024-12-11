@@ -98,24 +98,24 @@ select {
 }
 
 button,
-[type='button'],
-[type='reset'],
-[type='submit'] {
+[type=button],
+[type=reset],
+[type=submit] {
   -webkit-appearance: button;
 }
 
 button::-moz-focus-inner,
-[type='button']::-moz-focus-inner,
-[type='reset']::-moz-focus-inner,
-[type='submit']::-moz-focus-inner {
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
 
 button:-moz-focusring,
-[type='button']:-moz-focusring,
-[type='reset']:-moz-focusring,
-[type='submit']:-moz-focusring {
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
@@ -140,23 +140,23 @@ textarea {
   overflow: auto;
 }
 
-[type='checkbox'],
-[type='radio'] {
+[type=checkbox],
+[type=radio] {
   box-sizing: border-box;
   padding: 0;
 }
 
-[type='number']::-webkit-inner-spin-button,
-[type='number']::-webkit-outer-spin-button {
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
   height: auto;
 }
 
-[type='search'] {
+[type=search] {
   -webkit-appearance: textfield;
   outline-offset: -2px;
 }
 
-[type='search']::-webkit-search-decoration {
+[type=search]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -182,8 +182,7 @@ template {
 }
 
 @keyframes float {
-  0%,
-  100% {
+  0%, 100% {
     transform: translateY(0);
   }
   50% {
@@ -202,33 +201,33 @@ template {
 }
 
 .avatar-wrapper g:nth-of-type(2) {
-  animation-duration: 5s;
-  animation-delay: 2s;
+  animation-duration: 4s;
+  animation-delay: 1s;
 }
 
 .avatar-wrapper g:nth-of-type(3) {
-  animation-duration: 5s;
+  animation-duration: 4s;
   animation-delay: 1s;
 }
 
 .avatar-wrapper g:nth-of-type(4) {
-  animation-duration: 6s;
+  animation-duration: 4s;
   animation-delay: 1s;
 }
 
 .avatar-wrapper g:nth-of-type(5) {
-  animation-duration: 4s;
+  animation-duration: 6s;
   animation-delay: 2s;
 }
 
 .avatar-wrapper g:nth-of-type(6) {
-  animation-duration: 6s;
-  animation-delay: 2s;
+  animation-duration: 4s;
+  animation-delay: 1s;
 }
 
 .avatar-wrapper g:nth-of-type(7) {
-  animation-duration: 6s;
-  animation-delay: 2s;
+  animation-duration: 4s;
+  animation-delay: 1s;
 }
 
 .avatar-wrapper g:nth-of-type(8) {
@@ -238,10 +237,10 @@ template {
 
 .avatar-wrapper g:nth-of-type(9) {
   animation-duration: 6s;
-  animation-delay: 1s;
+  animation-delay: 2s;
 }
 
 .avatar-wrapper g:nth-of-type(10) {
-  animation-duration: 5s;
+  animation-duration: 4s;
   animation-delay: 1s;
 }

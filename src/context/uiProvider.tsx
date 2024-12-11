@@ -1,11 +1,4 @@
-import React, {
-  FC,
-  createContext,
-  PropsWithChildren,
-  useState,
-  useContext,
-  useEffect,
-} from 'react';
+import React, { FC, createContext, useState, useContext, useEffect } from 'react';
 
 import { ThemeManager, Theme } from '../utils/storage';
 
@@ -27,25 +20,32 @@ export const useUIProvider = () => {
 };
 
 export const UIProvider: FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [theme, setTheme] = useState<Theme>('light');
+  const [theme, setTheme] = useState<Theme>(Theme.Light);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const currentTheme = ThemeManager.get();
-      if (!currentTheme) {
-        ThemeManager.set('light');
+      const themeCookieValue = ThemeManager.get();
+
+      if (themeCookieValue) {
+        setTheme(themeCookieValue);
       } else {
-        setTheme(currentTheme);
+        // If no theme is set, check for the user's system preference
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          ThemeManager.set(Theme.Dark);
+          setTheme(Theme.Dark);
+        } else {
+          ThemeManager.set(Theme.Light);
+          setTheme(Theme.Light);
+        }
       }
-      document.documentElement.classList.toggle('dark', currentTheme === 'dark');
     }
   }, []);
 
   const toggleTheme = () => {
     setTheme((prev) => {
-      const newTheme = prev === 'dark' ? 'light' : 'dark';
+      const newTheme = prev === Theme.Dark ? Theme.Light : Theme.Dark;
       ThemeManager.set(newTheme);
-      document.documentElement.classList.toggle('dark', newTheme === 'dark'); // Toggles the dark class
+      document.documentElement.classList.toggle(Theme.Dark, newTheme === Theme.Dark); // Toggles the dark class
 
       return newTheme;
     });
